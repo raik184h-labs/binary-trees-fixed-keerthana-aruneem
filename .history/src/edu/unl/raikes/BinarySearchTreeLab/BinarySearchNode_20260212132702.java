@@ -38,13 +38,13 @@ class BinarySearchNode {
                 return this.leftChild.insert(data);
             }
         }
-        // Else, if the data's key is greater, go right
+        // TODO: ADD COMMENT
         else if (Integer.compare(data.key, person.key) > 0) {
-            // Checks if has no right child
+            // TODO: ADD COMMENT
             if (rightChild == null) {
                 setRightChild(new BinarySearchNode(data));
                 return true;
-            } // Otherwise, inserts the data at rightChild (recursively)
+            } // TODO: ADD COMMENT
             else {
                 return rightChild.insert(data);
             }
@@ -58,56 +58,52 @@ class BinarySearchNode {
      * @return node we're looking for
      */
     BinarySearchNode search(int key) {
-        // If the key is less than this node's key, search the left subtree
+        // TODO: ADD COMMENT
         if (this.leftChild != null && Integer.compare(key, this.person.key) < 0) {
             return leftChild.search(key);
         }
-        // If the key is greater than this node's key, search the right subtree
+        // TODO: ADD COMMENT
         else if (this.rightChild != null && Integer.compare(key, this.person.key) > 0) {
             return rightChild.search(key);
         }
-        // If the key matches this node's key, return this node
+        // TODO: ADD COMMENT
         else if (this.person.key == key) {
             return this;
         }
-        // Otherwise, the key was not found in the tree
+        // TODO: ADD COMMENT
         else {
             return null;
         }
     }
 
-    /**
-     * Deletes the node with the given key from the subtree rooted at this node.
-     * @param key the key of the node to delete
-     * @return the Person that was deleted, or null if not found
-     */
+    // TODO: ADD JAVADOC COMMENT
     Person delete(int key) {
-        // Search for the node to delete; return null if not found
+        // TODO: ADD COMMENT
         BinarySearchNode node = search(key);
         if (node == null)
             return null;
         Person deleted = node.person;
 
-        // Case 1: Node has no children (leaf node) -- remove it from its parent
+        // TODO: ADD COMMENT
         if (node.leftChild == null && node.rightChild == null) {
             if (node.parent.leftChild == node)
                 node.parent.setLeftChild(null);
             else if (node.parent.rightChild == node)
                 node.parent.setRightChild(null);
         }
-        // Case 2: Node has two children -- replace with in-order successor then delete successor
+        // TODO: ADD COMMENT
         else if (node.leftChild != null && node.rightChild != null) {
             BinarySearchNode min = node.rightChild.getNodeWithMinValue();
             node.person = min.person;
             int minKey = min.person.key;
             min.delete(minKey);
         }
-        // Case 3: Node has one child and is a left child -- replace with its non-null child
+        // TODO: ADD COMMENT
         else if (node.parent.leftChild == node) {
             BinarySearchNode newLeftChild = (node.leftChild != null) ? node.leftChild : node.rightChild;
             node.parent.setLeftChild(newLeftChild);
         }
-        // Case 4: Node has one child and is a right child -- replace with its non-null child
+        // TODO: ADD COMMENT
         else if (node.parent.rightChild == node) {
             BinarySearchNode newRightChild = (node.leftChild != null) ? node.leftChild : node.rightChild;
             node.parent.setRightChild(newRightChild);
@@ -116,10 +112,7 @@ class BinarySearchNode {
         return deleted;
     }
 
-    /**
-     * Recursively finds the node with the minimum key value in this subtree.
-     * @return the node with the smallest key
-     */
+    // TODO: ADD JAVADOC COMMENT
     BinarySearchNode getNodeWithMinValue() {
         if (leftChild == null)
             return this;
@@ -127,36 +120,26 @@ class BinarySearchNode {
             return leftChild.getNodeWithMinValue();
     }
 
-    /**
-     * Sets the left child of this node and updates the child's parent reference.
-     * @param child the node to set as the left child, or null to remove it
-     */
+    // TODO: ADD JAVADOC COMMENT
     void setLeftChild(BinarySearchNode child) {
         this.leftChild = child;
         if (child != null)
             child.parent = this;
     }
 
-    /**
-     * Sets the right child of this node and updates the child's parent reference.
-     * @param child the node to set as the right child, or null to remove it
-     */
+    // TODO: ADD JAVADOC COMMENT
     void setRightChild(BinarySearchNode child) {
         this.rightChild = child;
         if (child != null)
             child.parent = this;
     }
 
-    /**
-     * Returns a string representation of this subtree using a pre-order traversal
-     * (left subtree, right subtree, then current node).
-     * @return formatted string of all nodes in this subtree
-     */
+    // TODO: ADD JAVADOC COMMENT (WHAT KIND OF SEARCH SHOULD THIS BE???)
     public String toString() {
         StringBuilder toReturn = new StringBuilder();
         
 
-        this.addToString(this, toReturn);
+        addToString(this, toReturn);
         
 
         return toReturn.toString();
@@ -168,12 +151,9 @@ class BinarySearchNode {
         }
 
         addToString(node.leftChild, toString);
-
-		toString.append("  " + node.person.toString() + "\n");
-		
         addToString(node.rightChild, toString);
 
-       
+        toString.append("  " + node.person.toString() + "\n");
     }
 
 }

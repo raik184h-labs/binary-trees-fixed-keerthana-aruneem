@@ -15,9 +15,6 @@ public class LabRunner {
 		// add Dr. Val to the tree
 		insertIntoBSTAndPrintResults(bst, new Person(555555555, "Dr. Val"));
 
-		// add Dr. Bob to the tree (but with Dr. Val's NUID)
-		insertIntoBSTAndPrintResults(bst, new Person(555555555, "Dr. Bob"));
-
 		// add Dr. Cooper to the tree
 		insertIntoBSTAndPrintResults(bst, new Person(222222222, "Dr. Cooper"));
 
@@ -59,9 +56,6 @@ public class LabRunner {
 
 		// delete the person with NUID 666666666
 		deleteFromBSTAndPrintResults(bst, 666666666);
-
-		// delete the person with NUID 123 (doesn't exist)
-		deleteFromBSTAndPrintResults(bst, 123);
 
 	}
 

@@ -60,9 +60,6 @@ public class LabRunner {
 		// delete the person with NUID 666666666
 		deleteFromBSTAndPrintResults(bst, 666666666);
 
-		// delete the person with NUID 123 (doesn't exist)
-		deleteFromBSTAndPrintResults(bst, 123);
-
 	}
 
 	/**

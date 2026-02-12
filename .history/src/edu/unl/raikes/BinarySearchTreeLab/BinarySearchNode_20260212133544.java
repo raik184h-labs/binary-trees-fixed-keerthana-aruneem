@@ -168,12 +168,9 @@ class BinarySearchNode {
         }
 
         addToString(node.leftChild, toString);
-
-		toString.append("  " + node.person.toString() + "\n");
-		
         addToString(node.rightChild, toString);
 
-       
+        toString.append("  " + node.person.toString() + "\n");
     }
 
 }

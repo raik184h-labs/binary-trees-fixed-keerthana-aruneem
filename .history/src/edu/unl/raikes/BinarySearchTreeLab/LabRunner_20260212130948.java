@@ -15,9 +15,6 @@ public class LabRunner {
 		// add Dr. Val to the tree
 		insertIntoBSTAndPrintResults(bst, new Person(555555555, "Dr. Val"));
 
-		// add Dr. Bob to the tree (but with Dr. Val's NUID)
-		insertIntoBSTAndPrintResults(bst, new Person(555555555, "Dr. Bob"));
-
 		// add Dr. Cooper to the tree
 		insertIntoBSTAndPrintResults(bst, new Person(222222222, "Dr. Cooper"));
 
@@ -35,9 +32,6 @@ public class LabRunner {
 
 		// find the person with NUID 111111111
 		searchInBSTAndPrintResults(bst, 111111111);
-
-		// find the person with NUID 0 (shouldn't be tree)
-		searchInBSTAndPrintResults(bst, 0);
 
 		// find the person with NUID 555555555
 		searchInBSTAndPrintResults(bst, 555555555);
@@ -60,8 +54,7 @@ public class LabRunner {
 		// delete the person with NUID 666666666
 		deleteFromBSTAndPrintResults(bst, 666666666);
 
-		// delete the person with NUID 123 (doesn't exist)
-		deleteFromBSTAndPrintResults(bst, 123);
+		System.out.println(bst.toString());
 
 	}
 
