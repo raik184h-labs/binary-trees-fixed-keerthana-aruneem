@@ -1,0 +1,14 @@
+{
+  "editor.inlineSuggest.enabled": false,
+  "java.project.sourcePaths": [
+    "src"
+  ],
+  "files.exclude": {
+    "**/.history": true,
+    "**/.vscode": true,
+    "**/.specstory": true,
+    ".cursorignore": true,
+    ".cursorindexingignore": true,
+    ".cursorrules": true
+  }
+}
